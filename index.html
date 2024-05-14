@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Job Application Form</title>
+    <script>
+      function toggleJobLocation() {
+        var postSelect = document.getElementById("post");
+        var jobLocationSelect = document.getElementById("jobLocation");
+        if (postSelect.value === "a" || postSelect.value === "c") {
+          jobLocationSelect.style.display = "block";
+          document.getElementById("salesEngineerLocation").style.display = "none";
+        } else if (postSelect.value === "b") {
+          jobLocationSelect.style.display = "none";
+          document.getElementById("salesEngineerLocation").style.display = "block";
+        } else {
+          jobLocationSelect.style.display = "none";
+          document.getElementById("salesEngineerLocation").style.display = "none";
+        }
+      }
+
+      function submitForm() {
+        var form = document.getElementById("myForm");
+        var formData = new FormData(form);
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://script.google.com/macros/s/AKfycbxl7qVIdfpzioQP2nnnRsA9Fq4kK7wWQJyU_POb2udSshTSVCPfHpEAGKSTucl71m4yiA/exec", true);
+        xhr.send(formData);
+        xhr.onload = function() {
+          if (xhr.status === 200) {
+            alert("Form submitted successfully! Response: " + xhr.responseText);
+            form.reset();
+          } else {
+            alert("Error submitting form: " + xhr.statusText);
+          }
+        };
+      }
+    </script>
+  </head>
+  <body>
+    <form id="myForm">
+      <label for="post">Post Applied For:</label><br>
+      <select id="post" name="post" required onchange="toggleJobLocation()">
+        <option value="">Select</option>
+        <option value="a">Telecalling</option>
+        <option value="b">Sales engineer</option>
+        <option value="c">SCM (Logistice)</option>
+      </select><br>
+      <div id="jobLocation" style="display:none;">
+        <label for="jobLocation">Job Location:</label><br>
+        <select id="jobLocation" name="jobLocation">
+          <option value="">Select</option>
+          <option value="Chennai">Chennai</option>
+        </select><br>
+      </div>
+      <div id="salesEngineerLocation" style="display:none;">
+        <label for="salesEngineerLocation">Job Location for Sales Engineer:</label><br>
+        <select id="salesEngineerLocation" name="salesEngineerLocation">
+          <option value="">Select</option>
+          <option value="Chennai">Chennai</option>
+          <option value="Bangalore">Bangalore</option>
+          <option value="Tiruneveli">Tiruneveli</option>
+          <option value="Mysore">Mysore</option>
+          <option value="Hyderabad">Hyderabad</option>
+          <option value="Tiruvannamalai">Tiruvannamalai</option>
+          <option value="Pondicherry">Pondicherry</option>
+          <option value="Vellore">Vellore</option>
+        </select><br>
+      </div>
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required><br>
+      <label for="whatsapp">Whatsapp Number:</label><br>
+      <input type="tel" id="whatsapp" name="whatsapp" required><br>
+      <label for="age">Age:</label><br>
+      <input type="number" id="age" name="age"><br>
+      <label for="qualification">Qualification:</label><br>
+      <input type="text" id="qualification" name="qualification" required><br>
+      <label for="experience">Over all working experience:</label><br>
+      <input type="text" id="experience" name="experience"><br>
+      <label for="company">Present Company:</label><br>
+      <input type="text" id="company" name="company"><br>
+      <label for="salary">Present Monthly Salary:</label><br>
+      <input type="number" id="salary" name="salary" required><br>
+      <label for="location">Present Residing Location:</label><br>
+      <input type="text" id="location" name="location" required><br>
+      <label for="expectedSalary">Expected Salary Per Month:</label><br>
+      <input type="number" id="expectedSalary" name="expectedSalary"><br>
+      <label for="maritalStatus">Marital Status:</label><br>
+      <select id="maritalStatus" name="maritalStatus" required>
+        <option value="">Select</option>
+        <option value="married">Married</option>
+        <option value="unmarried">Unmarried</option>
+      </select><br>
+      <label for="children">Number Of Children If Any:</label><br>
+      <input type="number" id="children" name="children"><br>
+      <label for="resume">Attach Your Updated Resume:</label><br>
+      <input type="file" id="resume" name="resume"><br>
+      <label for="photo">Attach Your Recent Photo:</label><br>
+      <input type="file" id="photo" name="photo"><br>
+      <input type="submit" value="Submit" onclick="submitForm()">
+    </form>
+  </body>
+</html>
