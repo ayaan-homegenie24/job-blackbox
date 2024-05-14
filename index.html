@@ -23,7 +23,7 @@
         var form = document.getElementById("myForm");
         var formData = new FormData(form);
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "YOUR_WEB_APP_URL", true);
+        xhr.open("POST", "https://script.google.com/macros/s/AKfycbxl7qVIdfpzioQP2nnnRsA9Fq4kK7wWQJyU_POb2udSshTSVCPfHpEAGKSTucl71m4yiA/exec", true);
         xhr.send(formData);
         xhr.onload = function() {
           if (xhr.status === 200) {
