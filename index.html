@@ -6,16 +6,16 @@
     <script>
       function toggleJobLocation() {
         var postSelect = document.getElementById("post");
-        var jobLocationSelect = document.getElementById("jobLocation");
+        var jobLocationSelect = document.getElementById("jobLocationSelect");
         if (postSelect.value === "a" || postSelect.value === "c") {
           jobLocationSelect.style.display = "block";
-          document.getElementById("salesEngineerLocation").style.display = "none";
+          document.getElementById("salesEngineerLocationSelect").style.display = "none";
         } else if (postSelect.value === "b") {
           jobLocationSelect.style.display = "none";
-          document.getElementById("salesEngineerLocation").style.display = "block";
+          document.getElementById("salesEngineerLocationSelect").style.display = "block";
         } else {
           jobLocationSelect.style.display = "none";
-          document.getElementById("salesEngineerLocation").style.display = "none";
+          document.getElementById("salesEngineerLocationSelect").style.display = "none";
         }
       }
 
@@ -23,7 +23,7 @@
         var form = document.getElementById("myForm");
         var formData = new FormData(form);
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://script.google.com/macros/s/AKfycbxl7qVIdfpzioQP2nnnRsA9Fq4kK7wWQJyU_POb2udSshTSVCPfHpEAGKSTucl71m4yiA/exec", true);
+        xhr.open("POST", "YOUR_WEB_APP_URL", true);
         xhr.send(formData);
         xhr.onload = function() {
           if (xhr.status === 200) {
@@ -46,15 +46,15 @@
         <option value="c">SCM (Logistice)</option>
       </select><br>
       <div id="jobLocation" style="display:none;">
-        <label for="jobLocation">Job Location:</label><br>
-        <select id="jobLocation" name="jobLocation">
+        <label for="jobLocationSelect">Job Location:</label><br>
+        <select id="jobLocationSelect" name="jobLocation">
           <option value="">Select</option>
           <option value="Chennai">Chennai</option>
         </select><br>
       </div>
       <div id="salesEngineerLocation" style="display:none;">
-        <label for="salesEngineerLocation">Job Location for Sales Engineer:</label><br>
-        <select id="salesEngineerLocation" name="salesEngineerLocation">
+        <label for="salesEngineerLocationSelect">Job Location for Sales Engineer:</label><br>
+        <select id="salesEngineerLocationSelect" name="salesEngineerLocation">
           <option value="">Select</option>
           <option value="Chennai">Chennai</option>
           <option value="Bangalore">Bangalore</option>
@@ -92,10 +92,11 @@
       </select><br>
       <label for="children">Number Of Children If Any:</label><br>
       <input type="number" id="children" name="children"><br>
+
       <label for="resume">Attach Your Updated Resume:</label><br>
-      <input type="file" id="resume" name="resume"><br>
+      <input type="file" id="resume" name="resume" required><br>
       <label for="photo">Attach Your Recent Photo:</label><br>
-      <input type="file" id="photo" name="photo"><br>
+      <input type="file" id="photo" name="photo" required><br>
       <input type="submit" value="Submit" onclick="submitForm()">
     </form>
   </body>
