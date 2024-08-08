@@ -1,0 +1,250 @@
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #050203;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .nav {
+    font-size: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.header .nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #f8f8f8;
+}
+
+.header .nav a:hover {
+    color: #ccc;
+}
+
+.intro {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url('banner.png') no-repeat center fixed;
+    color: #f8f8f8;
+    text-align: center;
+}
+
+.intro .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.intro .intro-text {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 20px;
+    animation: fadeIn 3s;
+}
+
+.intro h1 {
+    font-size: 46px;
+    font-weight: bold;
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+    background-color: #000000;
+    color: #fff;
+}
+
+.about-content {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image {
+    flex: 0 0 404px;
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    max-width: 404px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+    flex: 1 1 auto;
+    padding: 0 20px;
+}
+
+.about-text h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.about-text h3 {
+    margin-top: 0;
+    text-align: left;
+}
+
+.about-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-text ul li {
+    margin-bottom: 5px;
+}
+
+.skills-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.skills-content div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skills-content img {
+    width: 100%;
+    max-width: 150px; /* Adjust max width as needed */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skills, .clients, .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    color: #333;
+    padding: 60px 20px;
+}
+
+.clients {
+    background-color: #fff;
+    color: #333;
+}
+
+.clients h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.clients .clients-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Adjust gap between logos as needed */
+}
+
+.clients .clients-content img {
+    width: 100%;
+    max-width: 150px; /* Adjust max width as needed */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact {
+    background-color: #333;
+    color: #f8f8f8;
+}
+
+.contact h2 {
+    font-size: 36px;
+}
+
+.contact p {
+    font-size: 18px;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-icons img {
+    width: 40px; /* Adjust as needed */
+    height: 40px; /* Adjust as needed */
+}
+
+/* Ensure Navigation Bar Stays in One Line */
+.header .nav {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    white-space: nowrap; /* Prevent wrapping */
+    overflow-x: auto; /* Allow scrolling if the content is too wide */
+}
+
+.header .nav a {
+    margin: 0 8px; /* Reduced margin slightly */
+    text-decoration: none;
+    color: #f8f8f8;
+}
+
+@media (max-width: 1024px) {
+    .header .nav {
+        font-size: 16px; /* Slightly smaller font on medium screens */
+    }
+
+    .header .nav a {
+        margin: 0 6px; /* Further reduced margin */
+    }
+}
+
+@media (max-width: 768px) {
+    .header .nav {
+        font-size: 14px; /* Even smaller font for mobile screens */
+    }
+
+    .header .nav a {
+        margin: 0 5px; /* Adjust margin for smaller screens */
+    }
+}
